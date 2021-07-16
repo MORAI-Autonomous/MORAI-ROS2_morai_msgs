@@ -1,4 +1,4 @@
-Header header
+std_msgs/Header header
 int16 vehicle_num
 float64[] pose_x
 float64[] pose_y

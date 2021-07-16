@@ -1,4 +1,4 @@
-Header header
+std_msgs/Header header
 int16 option_geometry
 byte option_dynamics
 

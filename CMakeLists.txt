@@ -1,88 +1,76 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 project(morai_msgs)
 
 
-find_package(catkin REQUIRED COMPONENTS
-  std_msgs
-  geometry_msgs
-  message_generation
+find_package(ament_cmake REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(builtin_interfaces REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+
+set(msg_files
+  "msg/CtrlCmd.msg"
+  "msg/EgoVehiclePosition.msg"
+  "msg/EgoVehicleStatus.msg"
+  "msg/EgoVehicleVelocity.msg"
+  "msg/FactoryAddress.msg"
+  "msg/GPSMessage.msg"
+  "msg/GuideData.msg"
+  "msg/ObjectInfo.msg"
+  "msg/ScenarioLoad.msg"
+  "msg/SVehicleStatus.msg"
+  "msg/TrafficLight.msg"
+  "msg/VehicleCommand.msg"
+  "msg/VelPlot.msg"
+  "msg/ERP42Info.msg"
+  "msg/GetTrafficLightStatus.msg"
+  "msg/SetTrafficLight.msg"
+  "msg/IntersectionControl.msg"
+  "msg/IntersectionStatus.msg"
+  "msg/CollisionData.msg"
+  "msg/MultiEgoSetting.msg"
+  "msg/IntscnTL.msg"
+  "msg/SensorPosControl.msg"
+  "msg/GenericVehicleControl.msg"
+  "msg/SaveSensorData.msg"
+  "msg/MoraiTimestamp.msg"
+  "msg/GhostMessage.msg"
+  "msg/Lamps.msg"
+  "msg/MoraiTLInfo.msg"
+  "msg/MoraiSimProcHandle.msg"
+  "msg/MoraiSimProcStatus.msg"
+  "msg/MoraiSrvResponse.msg"
+  "msg/MoraiTLIndex.msg"
+  "msg/RadarTrack.msg"
+  "msg/RadarTracks.msg"
+  "msg/Mgeo.msg"
+  "msg/MgeoLink.msg"
+  "msg/MgeoLinkList.msg"
+  "msg/MgeoNode.msg"
+  "msg/MgeoNodeList.msg"
+  "msg/EventInfo.msg"
+  "msg/ReplayInfo.msg"
+  "msg/ObjectStatus.msg"
+  "msg/ObjectStatusList.msg"
+  "msg/VehicleSpecIndex.msg"
+  "msg/VehicleSpec.msg"
+  "msg/VehicleCollision.msg"
+  "msg/VehicleCollisionData.msg"
+  "msg/NpcGhostCmd.msg"
+  "msg/NpcGhostInfo.msg"
 )
 
- add_message_files(
-   DIRECTORY msg
-   FILES
-   CtrlCmd.msg
-   EgoVehiclePosition.msg
-   EgoVehicleStatus.msg
-   EgoVehicleVelocity.msg
-   FactoryAddress.msg
-   GPSMessage.msg
-   GuideData.msg
-   ObjectInfo.msg
-   ScenarioLoad.msg
-   SVehicleStatus.msg
-   TrafficLight.msg
-   VehicleCommand.msg
-   VelPlot.msg
-   ERP42Info.msg
-   GetTrafficLightStatus.msg
-   SetTrafficLight.msg
-   IntersectionControl.msg
-   IntersectionStatus.msg
-   CollisionData.msg
-   MultiEgoSetting.msg
-   IntscnTL.msg
-   SensorPosControl.msg
-   GenericVehicleControl.msg
-   SaveSensorData.msg
-   MoraiTimestamp.msg
-   GhostMessage.msg
-   Lamps.msg
-   MoraiTLInfo.msg
-   MoraiSimProcHandle.msg
-   MoraiSimProcStatus.msg
-   MoraiSrvResponse.msg
-   MoraiTLIndex.msg
-   RadarTrack.msg
-   RadarTracks.msg
-   Mgeo.msg
-   MgeoLink.msg
-   MgeoLinkList.msg
-   MgeoNode.msg
-   MgeoNodeList.msg
-   EventInfo.msg
-   ReplayInfo.msg
-   ObjectStatus.msg
-   ObjectStatusList.msg
-   VehicleSpecIndex.msg
-   VehicleSpec.msg
-   VehicleCollision.msg
-   VehicleCollisionData.msg
-   NpcGhostCmd.msg
-   NpcGhostInfo.msg
- )
-
- add_service_files(
-   DIRECTORY srv
-   FILES
-   MoraiScenarioLoadSrv.srv
-   MoraiSimProcSrv.srv
-   MoraiTLInfoSrv.srv
-   MoraiVehicleSpecSrv.srv
-   MoraiEventCmdSrv.srv
- )
-
-
- generate_messages(
-   DEPENDENCIES
-   geometry_msgs
-   std_msgs
- )
-
-catkin_package(
-  CATKIN_DEPENDS 
-  std_msgs 
-  geometry_msgs
-  message_runtime
+set(srv_files
+  "srv/MoraiScenarioLoadSrv.srv"
+  "srv/MoraiSimProcSrv.srv"
+  "srv/MoraiTLInfoSrv.srv"
+  "srv/MoraiVehicleSpecSrv.srv"
+  "srv/MoraiEventCmdSrv.srv"
 )
 
+rosidl_generate_interfaces(${PROJECT_NAME}
+  ${msg_files}
+  ${srv_files}
+)
+
+ament_package()

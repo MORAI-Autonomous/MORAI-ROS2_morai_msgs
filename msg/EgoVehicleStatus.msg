@@ -1,4 +1,4 @@
-Header header
+std_msgs/Header header
 int32 unique_id
 geometry_msgs/Vector3 acceleration
 geometry_msgs/Vector3 position

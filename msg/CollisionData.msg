@@ -1,4 +1,4 @@
-Header header
+std_msgs/Header header
 
 string[] object_type
 int32[] object_id

@@ -1,7 +1,7 @@
 # You should set header.stamp when you publish this message to the correspoding topic
 #
 # - The header.stamp will be used for measuring timeout in the lower layer for fail-safe
-Header header
+std_msgs/Header header
 
 # True for emergency stop
 # 

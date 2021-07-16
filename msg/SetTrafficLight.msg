@@ -1,3 +1,3 @@
-bool isAutoMode
-string trafficLightIndex
-int16 trafficLightStatus
+bool is_auto_mode
+string traffic_light_index
+int16 traffic_light_status

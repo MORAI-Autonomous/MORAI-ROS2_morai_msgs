@@ -1,2 +1,2 @@
 float64 msec
-string dateTime
+string date_time

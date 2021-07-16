@@ -1,4 +1,4 @@
-Header header
+std_msgs/Header header
 
 float64 ego_acc
 float64 ego_brake
@@ -9,13 +9,13 @@ float64 ego_orientation_y
 float64 ego_orientation_z
 float64 ego_orientation_w
 
-float64 ego_linearAcceleration_x
-float64 ego_linearAcceleration_y
-float64 ego_linearAcceleration_z
+float64 ego_linear_acceleration_x
+float64 ego_linear_acceleration_y
+float64 ego_linear_acceleration_z
 
-float64 ego_AngularVelocity_x
-float64 ego_AngularVelocity_y
-float64 ego_AngularVelocity_z
+float64 ego_angular_velocity_x
+float64 ego_angular_velocity_y
+float64 ego_angular_velocity_z
 
 int32 num_of_objects
 int16[] object_type
