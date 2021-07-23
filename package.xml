@@ -50,7 +50,7 @@
   <!-- Use doc_depend for packages you need only for building documentation: -->
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>ament_cmake</buildtool_depend>
-  <build_depend>rosidl_default_generator</build_depend>
+  <build_depend>rosidl_default_generators</build_depend>
   <depend>std_msgs</depend>
   <depend>geometry_msgs</depend>
   <depend>builtin_interfaces</depend>

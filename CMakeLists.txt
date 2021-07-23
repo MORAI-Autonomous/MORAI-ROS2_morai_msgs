@@ -9,6 +9,7 @@ find_package(builtin_interfaces REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 set(msg_files
+  "msg/CollisionData.msg"
   "msg/CtrlCmd.msg"
   "msg/EgoVehiclePosition.msg"
   "msg/EgoVehicleStatus.msg"
@@ -27,7 +28,6 @@ set(msg_files
   "msg/SetTrafficLight.msg"
   "msg/IntersectionControl.msg"
   "msg/IntersectionStatus.msg"
-  "msg/CollisionData.msg"
   "msg/MultiEgoSetting.msg"
   "msg/IntscnTL.msg"
   "msg/SensorPosControl.msg"
@@ -71,6 +71,7 @@ set(srv_files
 rosidl_generate_interfaces(${PROJECT_NAME}
   ${msg_files}
   ${srv_files}
+  DEPENDENCIES std_msgs geometry_msgs builtin_interfaces
 )
 
 ament_package()
