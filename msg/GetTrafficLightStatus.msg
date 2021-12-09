@@ -1,5 +1,5 @@
-Header header
+std_msgs/Header header
 
-string trafficLightIndex
-int16 trafficLightType
-int16 trafficLightStatus
+string traffic_light_index
+int16 traffic_light_type
+int16 traffic_light_status

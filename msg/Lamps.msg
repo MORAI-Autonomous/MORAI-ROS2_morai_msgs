@@ -1,4 +1,4 @@
-Header header
+std_msgs/Header header
 
-int8 turnSignal
-int8 emergencySignal
+int8 turn_signal
+int8 emergency_signal
