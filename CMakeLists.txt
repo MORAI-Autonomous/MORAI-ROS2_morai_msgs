@@ -23,6 +23,7 @@ set(msg_files
   "msg/Lamps.msg"
   "msg/MapSpec.msg"
   "msg/MapSpecIndex.msg"
+  "msg/MoraiSimConfig.msg"
   "msg/MoraiSimProcHandle.msg"
   "msg/MoraiSimProcStatus.msg"
   "msg/MoraiSrvResponse.msg"
