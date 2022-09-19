@@ -1,3 +1,3 @@
-int cmd_type
+int32 cmd_type
 SkidModel skid_model_ctrl
 geometry_msgs/Twist velocity_ctrl
