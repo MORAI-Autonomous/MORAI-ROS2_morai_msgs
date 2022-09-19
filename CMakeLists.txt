@@ -44,6 +44,9 @@ set(msg_files
   "msg/ScenarioLoad.msg"
   "msg/SensorPosControl.msg"
   "msg/SetTrafficLight.msg"
+  "msg/SkidModel.msg"
+  "msg/SkidCtrlCmd.msg"
+  "msg/SkidCtrlReport.msg"
   "msg/SyncModeAddObj.msg"
   "msg/SyncModeCmd.msg"
   "msg/SyncModeCmdResponse.msg"
@@ -60,6 +63,8 @@ set(msg_files
   "msg/VehicleSpecIndex.msg"
   "msg/WaitForTick.msg"
   "msg/WaitForTickResponse.msg"
+  "msg/WheelRpm.msg"
+  "msg/WheelTorque.msg"
 )
 
 set(srv_files
