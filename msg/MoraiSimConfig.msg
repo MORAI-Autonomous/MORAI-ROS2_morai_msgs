@@ -6,3 +6,4 @@ string camera_list
 string gps_list
 string imu_list
 string lidar_list
+string radar_list
