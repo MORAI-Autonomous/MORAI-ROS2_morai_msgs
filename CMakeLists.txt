@@ -67,6 +67,12 @@ set(msg_files
   "msg/WaitForTickResponse.msg"
   "msg/WheelRpm.msg"
   "msg/WheelTorque.msg"
+  "msg/AutoDoorCtrlCmd.msg"
+  "msg/AutoDoorStatus.msg"
+  "msg/EVCtrlCmd.msg"
+  "msg/EVStatus.msg"
+  "msg/SpeedGateCtrlCmd.msg"
+  "msg/SpeedGateStatus.msg"
 )
 
 set(srv_files
