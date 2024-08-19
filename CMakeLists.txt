@@ -69,8 +69,7 @@ set(msg_files
   "msg/WheelTorque.msg"
   "msg/AutoDoorCtrlCmd.msg"
   "msg/AutoDoorStatus.msg"
-  "msg/EVCtrlCmd.msg"
-  "msg/EVStatus.msg"
+  "msg/ElevatorCtrlCmd.msg"
   "msg/SpeedGateCtrlCmd.msg"
   "msg/SpeedGateStatus.msg"
 )
@@ -88,6 +87,7 @@ set(srv_files
   "srv/MoraiVehicleSpecSrv.srv"
   "srv/MoraiWaitForTickSrv.srv"
   "srv/PREventSrv.srv"
+  "srv/ElevatorStatusSrv.srv"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
