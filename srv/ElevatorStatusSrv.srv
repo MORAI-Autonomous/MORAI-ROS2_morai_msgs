@@ -1,4 +1,4 @@
-std_msgs/Empty
+std_msgs/Empty empty
 ---
 std_msgs/Header header
 
