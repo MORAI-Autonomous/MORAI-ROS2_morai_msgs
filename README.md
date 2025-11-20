@@ -1,16 +1,17 @@
-# MORAI - ROS2 morai msgs
+# MORAI ROS2 Messages
 
-ROS2 morai msgs is a message format for simulating autonomous driving with MORAI Simulator, MORAI SIM: Drive.
+This package contains the ROS 2 message and service definitions (`.msg`, `.srv`) required for interfacing with **MORAI SIM: Drive**, an autonomous driving simulator.
 
-The message format contains the following data.
-- vehicle status data
-- ground truth object data
-- vehicle control data
+## Resources
 
-The messages format is for working with ROS2
+- [Website](https://www.morai.ai/)
+- **Documentation**:
+  - [MORAI SIM Manual (English)](https://morai-sim-drive-user-manual-en-24-r2.scrollhelp.site/morai-sim-drive-user-manual-en-24.r2/Working-version/?l=en)
+  - [MORAI SIM Manual (Korean)](https://help-morai-sim.scrollhelp.site/)
+- **Quickstart Guide**:
+  - [ROS2 Environment Setup](https://morai-sim-drive-user-manual-en-24-r2.scrollhelp.site/morai-sim-drive-user-manual-en-24.r2/Working-version/developer-setup-for-ros2)
+  - [Data Sync Example](https://morai-sim-drive-user-manual-en-24-r2.scrollhelp.site/morai-sim-drive-user-manual-en-24.r2/Working-version/ros2-data-sync-example)
 
-## More information
+## License
 
-Please visit [our homepage](https://www.morai.ai/) and check out the MORAI Simulator!
-
-Also you can check our manual at [MORAI Sim manual (EN)](https://help-morai-sim-en.scrollhelp.site/) / [MORAI Sim manual (KR)](https://help-morai-sim.scrollhelp.site/).
+This project is licensed under the [MIT License](LICENSE).
