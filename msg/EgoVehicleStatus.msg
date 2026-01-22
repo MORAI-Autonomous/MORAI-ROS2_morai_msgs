@@ -3,8 +3,29 @@ int32 unique_id
 geometry_msgs/Vector3 acceleration
 geometry_msgs/Vector3 position
 geometry_msgs/Vector3 velocity
+geometry_msgs/Vector3 angular_velocity
 
 float64 heading
 float64 accel
 float64 brake
-float64 wheel_angle
+float64 front_wheel_angle
+float64 rear_wheel_angle
+
+float32 tire_lateral_force_fl
+float32 tire_lateral_force_fr
+float32 tire_lateral_force_rl
+float32 tire_lateral_force_rr
+
+float32 side_slip_angle_fl
+float32 side_slip_angle_fr
+float32 side_slip_angle_rl
+float32 side_slip_angle_rr
+
+float32 tire_cornering_stiffness_fl
+float32 tire_cornering_stiffness_fr
+float32 tire_cornering_stiffness_rl
+float32 tire_cornering_stiffness_rr
+
+float32 distance_left_lane_boundary
+float32 distance_right_lane_boundary
+float32 cross_track_error

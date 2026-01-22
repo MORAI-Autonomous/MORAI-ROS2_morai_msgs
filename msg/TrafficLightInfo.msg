@@ -1,3 +1,4 @@
 std_msgs/Header header
 
-bool result
+string idx
+int16 status
