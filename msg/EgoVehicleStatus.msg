@@ -8,8 +8,8 @@ geometry_msgs/Vector3 angular_velocity
 float64 heading
 float64 accel
 float64 brake
-float64 front_wheel_angle
-float64 rear_wheel_angle
+float64 front_steer
+float64 rear_steer
 
 float32 tire_lateral_force_fl
 float32 tire_lateral_force_fr
