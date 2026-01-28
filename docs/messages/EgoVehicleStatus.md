@@ -35,7 +35,8 @@ float32 tire_cornering_stiffness_rr
 
 float32 distance_left_lane_boundary
 float32 distance_right_lane_boundary
-float32 cross_track_error```
+float32 cross_track_error
+```
 
 ## Field Descriptions
 

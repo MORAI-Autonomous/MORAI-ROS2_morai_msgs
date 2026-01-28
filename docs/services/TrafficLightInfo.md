@@ -7,7 +7,8 @@
 ```
 TrafficLightIndex request
 ---
-TrafficLightInfo response```
+TrafficLightInfo response
+```
 
 ## Request Fields
 

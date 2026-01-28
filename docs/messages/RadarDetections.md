@@ -7,7 +7,8 @@
 ```
 std_msgs/Header header
 
-RadarDetection[] detections```
+RadarDetection[] detections
+```
 
 ## Field Descriptions
 

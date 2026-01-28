@@ -15,7 +15,8 @@ float64 front_steer
 float64 rear_steer
 
 float64 velocity
-float64 acceleration```
+float64 acceleration
+```
 
 ## Field Descriptions
 

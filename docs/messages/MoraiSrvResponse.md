@@ -7,7 +7,8 @@
 ```
 std_msgs/Header header
 
-bool result```
+bool result
+```
 
 ## Field Descriptions
 
