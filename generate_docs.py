@@ -140,6 +140,8 @@ def generate_msg_doc(msg_name, msg_path):
     doc += "## Message Definition\n\n"
     doc += "```\n"
     doc += raw_content
+    if raw_content and not raw_content.endswith('\n'):
+        doc += "\n"
     doc += "```\n\n"
     
     if fields:
@@ -193,6 +195,8 @@ def generate_srv_doc(srv_name, srv_path):
     doc += "## Service Definition\n\n"
     doc += "```\n"
     doc += raw_content
+    if raw_content and not raw_content.endswith('\n'):
+        doc += "\n"
     doc += "```\n\n"
     
     if request_fields:
