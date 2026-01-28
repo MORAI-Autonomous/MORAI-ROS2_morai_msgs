@@ -1,0 +1,113 @@
+site_name: MORAI ROS2 Messages Documentation
+site_description: Documentation for MORAI ROS2 message and service definitions
+site_author: MORAI
+repo_url: https://github.com/MORAI-Autonomous/MORAI-ROS2_morai_msgs
+repo_name: MORAI-ROS2_morai_msgs
+
+theme:
+  name: material
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+
+plugins:
+  - search
+  - tags
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Messages:
+    - Overview: messages/index.md
+    - Control Messages:
+      - CtrlCmd: messages/CtrlCmd.md
+    - Vehicle Status:
+      - EgoVehicleStatus: messages/EgoVehicleStatus.md
+      - VehicleSpec: messages/VehicleSpec.md
+      - VehicleSpecIndex: messages/VehicleSpecIndex.md
+      - Lamps: messages/Lamps.md
+    - Collision & Safety:
+      - CollisionData: messages/CollisionData.md
+      - VehicleCollision: messages/VehicleCollision.md
+      - VehicleCollisionData: messages/VehicleCollisionData.md
+    - Traffic & Infrastructure:
+      - GetTrafficLightStatus: messages/GetTrafficLightStatus.md
+      - SetTrafficLight: messages/SetTrafficLight.md
+      - TrafficLightIndex: messages/TrafficLightIndex.md
+      - TrafficLightInfo: messages/TrafficLightInfo.md
+      - IntersectionControl: messages/IntersectionControl.md
+      - IntersectionStatus: messages/IntersectionStatus.md
+    - Perception & Sensors:
+      - ObjectStatus: messages/ObjectStatus.md
+      - ObjectStatusList: messages/ObjectStatusList.md
+      - RadarDetection: messages/RadarDetection.md
+      - RadarDetections: messages/RadarDetections.md
+      - GPSMessage: messages/GPSMessage.md
+      - SensorPosControl: messages/SensorPosControl.md
+    - Simulation Control:
+      - MoraiSimProcHandle: messages/MoraiSimProcHandle.md
+      - MoraiSimProcStatus: messages/MoraiSimProcStatus.md
+      - MoraiSrvResponse: messages/MoraiSrvResponse.md
+      - ScenarioLoad: messages/ScenarioLoad.md
+      - EventInfo: messages/EventInfo.md
+      - ReplayInfo: messages/ReplayInfo.md
+      - SaveSensorData: messages/SaveSensorData.md
+    - Ghost & NPC:
+      - GhostCmd: messages/GhostCmd.md
+      - NpcGhostCmd: messages/NpcGhostCmd.md
+      - NpcGhostInfo: messages/NpcGhostInfo.md
+    - Map:
+      - MapSpec: messages/MapSpec.md
+    - Multi-Vehicle:
+      - MultiEgoSetting: messages/MultiEgoSetting.md
+  - Services:
+    - Overview: services/index.md
+    - EventCmd: services/EventCmd.md
+    - MapSpec: services/MapSpec.md
+    - ScenarioLoad: services/ScenarioLoad.md
+    - MoraiSimProc: services/MoraiSimProc.md
+    - TLInfo: services/TrafficLightInfo.md
+    - VehicleSpec: services/VehicleSpec.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/MORAI-Autonomous

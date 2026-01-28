@@ -1,6 +1,8 @@
+std_msgs/Header header
+
 string file_name
-bool load_network_connection_data
 bool delete_all
+bool load_network_connection_data
 bool load_ego_vehicle_data
 bool load_surrounding_vehicle_data
 bool load_pedestrian_data

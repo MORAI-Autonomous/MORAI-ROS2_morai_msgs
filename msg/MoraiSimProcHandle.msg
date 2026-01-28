@@ -1,3 +1,5 @@
+std_msgs/Header header
+
 uint8 sim_process_status
 
 int16 replay_option
