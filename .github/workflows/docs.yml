@@ -35,7 +35,7 @@ jobs:
           pip install pymdown-extensions
       
       - name: Generate documentation pages
-        run: python generate_docs.py
+        run: python docs/generate_docs.py
       
       - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force
