@@ -2,25 +2,33 @@
 
 **Service Type**: `morai_msgs/srv/ScenarioLoad`
 
+Load a scenario file into the simulator.
+
+**Service**: `/Service_MoraiScenarioLoad`
+
 ## Service Definition
 
 ```
-ScenarioLoad request
+# ScenarioLoad
+# Load a scenario file into the simulator.
+# Service: /Service_MoraiScenarioLoad
+
+ScenarioLoad request       # Scenario file and load options
 ---
-MoraiSrvResponse response
+MoraiSrvResponse response  # Success/failure result
 ```
 
 ## Request Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `request` | `ScenarioLoad` | - |
+| `request` | `ScenarioLoad` | Scenario file and load options |
 
 ## Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `response` | `MoraiSrvResponse` | - |
+| `response` | `MoraiSrvResponse` | Success/failure result |
 
 ## Usage Example
 

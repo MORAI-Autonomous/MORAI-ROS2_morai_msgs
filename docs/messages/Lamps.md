@@ -2,13 +2,18 @@
 
 **Message Type**: `morai_msgs/msg/Lamps`
 
+Vehicle turn signal and emergency lamp control.
+
 ## Message Definition
 
 ```
+# Lamps
+# Vehicle turn signal and emergency lamp control.
+
 std_msgs/Header header
 
-int8 turn_signal
-int8 emergency_signal
+int8 turn_signal  # Turn signal (0: No signal, 1: Left, 2: Right)
+int8 emergency_signal  # Emergency signal (0: No signal, 1: Emergency lamps on)
 ```
 
 ## Field Descriptions
@@ -16,8 +21,8 @@ int8 emergency_signal
 | Field | Type | Description |
 |-------|------|-------------|
 | `header` | `std_msgs/Header` | - |
-| `turn_signal` | `int8` | - |
-| `emergency_signal` | `int8` | - |
+| `turn_signal` | `int8` | Turn signal (0: No signal, 1: Left, 2: Right) |
+| `emergency_signal` | `int8` | Emergency signal (0: No signal, 1: Emergency lamps on) |
 
 ## Usage Example
 

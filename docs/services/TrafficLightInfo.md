@@ -2,25 +2,33 @@
 
 **Service Type**: `morai_msgs/srv/TrafficLightInfo`
 
+Query the state of a specific traffic light by index.
+
+**Service**: `/Morai_TLSrv`
+
 ## Service Definition
 
 ```
-TrafficLightIndex request
+# TrafficLightInfo
+# Query the state of a specific traffic light by index.
+# Service: /Morai_TLSrv
+
+TrafficLightIndex request   # Traffic light index to query
 ---
-TrafficLightInfo response
+TrafficLightInfo response   # Traffic light state information
 ```
 
 ## Request Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `request` | `TrafficLightIndex` | - |
+| `request` | `TrafficLightIndex` | Traffic light index to query |
 
 ## Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `response` | `TrafficLightInfo` | - |
+| `response` | `TrafficLightInfo` | Traffic light state information |
 
 ## Usage Example
 

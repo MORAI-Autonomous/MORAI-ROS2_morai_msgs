@@ -2,25 +2,33 @@
 
 **Service Type**: `morai_msgs/srv/MoraiSimProc`
 
+Send rosbag replay playback commands to the simulator.
+
+**Service**: `/Service_MoraiSimProc`
+
 ## Service Definition
 
 ```
-MoraiSimProcHandle request
+# MoraiSimProc
+# Send rosbag replay playback commands to the simulator.
+# Service: /Service_MoraiSimProc
+
+MoraiSimProcHandle request  # Playback command and conditions
 ---
-MoraiSrvResponse response
+MoraiSrvResponse response   # Success/failure result
 ```
 
 ## Request Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `request` | `MoraiSimProcHandle` | - |
+| `request` | `MoraiSimProcHandle` | Playback command and conditions |
 
 ## Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `response` | `MoraiSrvResponse` | - |
+| `response` | `MoraiSrvResponse` | Success/failure result |
 
 ## Usage Example
 

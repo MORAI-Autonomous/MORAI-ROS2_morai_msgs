@@ -108,6 +108,10 @@ nav:
     - VehicleSpec: services/VehicleSpec.md
 
 extra:
+  # Enables the version selector dropdown in the header (powered by mike).
+  version:
+    provider: mike
+    default: latest
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/MORAI-Autonomous

@@ -2,17 +2,22 @@
 
 **Message Type**: `morai_msgs/msg/VehicleCollision`
 
+A single collision event between NPC vehicles.
+
 ## Message Definition
 
 ```
-ObjectStatus[] crashed_vehicles
+# VehicleCollision
+# A single collision event between NPC vehicles.
+
+ObjectStatus[] crashed_vehicles  # List of collided NPC vehicles
 ```
 
 ## Field Descriptions
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `crashed_vehicles` | `ObjectStatus[]` | - |
+| `crashed_vehicles` | `ObjectStatus[]` | List of collided NPC vehicles |
 
 ## Usage Example
 

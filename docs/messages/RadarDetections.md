@@ -2,12 +2,17 @@
 
 **Message Type**: `morai_msgs/msg/RadarDetections`
 
+Array of radar detection points.
+
 ## Message Definition
 
 ```
+# RadarDetections
+# Array of radar detection points.
+
 std_msgs/Header header
 
-RadarDetection[] detections
+RadarDetection[] detections  # Array of individual radar detections
 ```
 
 ## Field Descriptions
@@ -15,7 +20,7 @@ RadarDetection[] detections
 | Field | Type | Description |
 |-------|------|-------------|
 | `header` | `std_msgs/Header` | - |
-| `detections` | `RadarDetection[]` | - |
+| `detections` | `RadarDetection[]` | Array of individual radar detections |
 
 ## Usage Example
 

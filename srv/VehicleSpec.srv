@@ -1,3 +1,7 @@
-VehicleSpecIndex request
+# VehicleSpec
+# Query the specification of a vehicle by unique id.
+# Service: /Service_MoraiVehicleSpec
+
+VehicleSpecIndex request  # Unique id of the requested vehicle
 ---
-VehicleSpec response
+VehicleSpec response      # Vehicle specification data

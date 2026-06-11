@@ -2,12 +2,20 @@
 
 **Message Type**: `morai_msgs/msg/TrafficLightIndex`
 
+Traffic light query request for the TrafficLightInfo service.
+
+**Service**: `/Morai_TLSrv (request)`
+
 ## Message Definition
 
 ```
+# TrafficLightIndex
+# Traffic light query request for the TrafficLightInfo service.
+# Service: /Morai_TLSrv (request)
+
 std_msgs/Header header
 
-string idx
+string idx  # Unique ID of the requested traffic light
 ```
 
 ## Field Descriptions
@@ -15,7 +23,7 @@ string idx
 | Field | Type | Description |
 |-------|------|-------------|
 | `header` | `std_msgs/Header` | - |
-| `idx` | `string` | - |
+| `idx` | `string` | Unique ID of the requested traffic light |
 
 ## Usage Example
 

@@ -2,25 +2,33 @@
 
 **Service Type**: `morai_msgs/srv/VehicleSpec`
 
+Query the specification of a vehicle by unique id.
+
+**Service**: `/Service_MoraiVehicleSpec`
+
 ## Service Definition
 
 ```
-VehicleSpecIndex request
+# VehicleSpec
+# Query the specification of a vehicle by unique id.
+# Service: /Service_MoraiVehicleSpec
+
+VehicleSpecIndex request  # Unique id of the requested vehicle
 ---
-VehicleSpec response
+VehicleSpec response      # Vehicle specification data
 ```
 
 ## Request Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `request` | `VehicleSpecIndex` | - |
+| `request` | `VehicleSpecIndex` | Unique id of the requested vehicle |
 
 ## Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `response` | `VehicleSpec` | - |
+| `response` | `VehicleSpec` | Vehicle specification data |
 
 ## Usage Example
 

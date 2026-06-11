@@ -2,25 +2,33 @@
 
 **Service Type**: `morai_msgs/srv/EventCmd`
 
+Apply a one-time vehicle event (control mode, gear, lamps, pause).
+
+**Service**: `/Service_MoraiEventCmd`
+
 ## Service Definition
 
 ```
-EventInfo request
+# EventCmd
+# Apply a one-time vehicle event (control mode, gear, lamps, pause).
+# Service: /Service_MoraiEventCmd
+
+EventInfo request   # Event settings to apply
 ---
-EventInfo response
+EventInfo response  # Resulting event state after applying the request
 ```
 
 ## Request Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `request` | `EventInfo` | - |
+| `request` | `EventInfo` | Event settings to apply |
 
 ## Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `response` | `EventInfo` | - |
+| `response` | `EventInfo` | Resulting event state after applying the request |
 
 ## Usage Example
 

@@ -2,12 +2,20 @@
 
 **Message Type**: `morai_msgs/msg/NpcGhostCmd`
 
+Control commands for NPC/traffic vehicles in ghost mode.
+
+**Topic**: `/NpcGhost_Topic`
+
 ## Message Definition
 
 ```
+# NpcGhostCmd
+# Control commands for NPC/traffic vehicles in ghost mode.
+# Topic: /NpcGhost_Topic
+
 std_msgs/Header header
 
-NpcGhostInfo[] npc_list
+NpcGhostInfo[] npc_list  # Array of NPC ghost vehicle information
 ```
 
 ## Field Descriptions
@@ -15,7 +23,7 @@ NpcGhostInfo[] npc_list
 | Field | Type | Description |
 |-------|------|-------------|
 | `header` | `std_msgs/Header` | - |
-| `npc_list` | `NpcGhostInfo[]` | - |
+| `npc_list` | `NpcGhostInfo[]` | Array of NPC ghost vehicle information |
 
 ## Usage Example
 

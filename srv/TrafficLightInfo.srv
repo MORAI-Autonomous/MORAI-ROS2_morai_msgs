@@ -1,3 +1,7 @@
-TrafficLightIndex request
+# TrafficLightInfo
+# Query the state of a specific traffic light by index.
+# Service: /Morai_TLSrv
+
+TrafficLightIndex request   # Traffic light index to query
 ---
-TrafficLightInfo response
+TrafficLightInfo response   # Traffic light state information

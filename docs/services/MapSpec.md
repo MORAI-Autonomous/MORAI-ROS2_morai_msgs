@@ -2,25 +2,33 @@
 
 **Service Type**: `morai_msgs/srv/MapSpec`
 
+Query the map coordinate system specification.
+
+**Service**: `/Service_MoraiMapSpec`
+
 ## Service Definition
 
 ```
-std_msgs/Empty empty
+# MapSpec
+# Query the map coordinate system specification.
+# Service: /Service_MoraiMapSpec
+
+std_msgs/Empty empty  # Empty request (no parameters)
 ---
-MapSpec response
+MapSpec response  # Map coordinate system specification
 ```
 
 ## Request Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `empty` | `std_msgs/Empty` | - |
+| `empty` | `std_msgs/Empty` | Empty request (no parameters) |
 
 ## Response Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `response` | `MapSpec` | - |
+| `response` | `MapSpec` | Map coordinate system specification |
 
 ## Usage Example
 

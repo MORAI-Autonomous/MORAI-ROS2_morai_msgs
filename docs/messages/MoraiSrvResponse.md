@@ -2,12 +2,17 @@
 
 **Message Type**: `morai_msgs/msg/MoraiSrvResponse`
 
+Generic service response indicating success or failure.
+
 ## Message Definition
 
 ```
+# MoraiSrvResponse
+# Generic service response indicating success or failure.
+
 std_msgs/Header header
 
-bool result
+bool result  # true: success, false: failure
 ```
 
 ## Field Descriptions
@@ -15,7 +20,7 @@ bool result
 | Field | Type | Description |
 |-------|------|-------------|
 | `header` | `std_msgs/Header` | - |
-| `result` | `bool` | - |
+| `result` | `bool` | true: success, false: failure |
 
 ## Usage Example
 

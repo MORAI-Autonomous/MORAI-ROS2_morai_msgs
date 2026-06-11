@@ -18,6 +18,62 @@ DOCS_MSG_DIR.mkdir(parents=True, exist_ok=True)
 DOCS_SRV_DIR.mkdir(parents=True, exist_ok=True)
 
 
+def parse_header_block(path):
+    """Parse the leading comment block of a .msg/.srv file.
+
+    Convention (matches the annotated definitions):
+        # <Title>
+        # <description line(s)>
+        # Topic: /some_topic      (optional)
+        # Service: /some_service  (optional)
+        <blank line>
+        <fields...>
+
+    Returns a dict with 'description', 'topic' and 'service' keys.
+    """
+    description_lines = []
+    topic = None
+    service = None
+    first = True
+
+    with open(path, 'r', encoding='utf-8') as f:
+        for raw in f:
+            line = raw.rstrip()
+            # The header block ends at the first blank or non-comment line.
+            if not line.strip() or not line.strip().startswith('#'):
+                break
+            text = line.strip()[1:].strip()
+            if first:
+                # Skip the title line (the message/service name itself).
+                first = False
+                continue
+            lower = text.lower()
+            if lower.startswith('topic:'):
+                topic = text.split(':', 1)[1].strip()
+            elif lower.startswith('service:'):
+                service = text.split(':', 1)[1].strip()
+            elif text:
+                description_lines.append(text)
+
+    return {
+        'description': ' '.join(description_lines).strip(),
+        'topic': topic,
+        'service': service,
+    }
+
+
+def render_header_section(header):
+    """Render description / topic / service metadata as markdown."""
+    out = ""
+    if header['description']:
+        out += f"{header['description']}\n\n"
+    if header['topic']:
+        out += f"**Topic**: `{header['topic']}`\n\n"
+    if header['service']:
+        out += f"**Service**: `{header['service']}`\n\n"
+    return out
+
+
 def parse_msg_file(msg_path):
     """Parse a .msg file and return fields with comments."""
     fields = []
@@ -132,7 +188,8 @@ def generate_msg_doc(msg_name, msg_path):
     
     doc = f"# {msg_name}\n\n"
     doc += f"**Message Type**: `morai_msgs/msg/{msg_name}`\n\n"
-    
+    doc += render_header_section(parse_header_block(msg_path))
+
     # Read raw content
     with open(msg_path, 'r', encoding='utf-8') as f:
         raw_content = f.read()
@@ -187,7 +244,8 @@ def generate_srv_doc(srv_name, srv_path):
     
     doc = f"# {srv_name}\n\n"
     doc += f"**Service Type**: `morai_msgs/srv/{srv_name}`\n\n"
-    
+    doc += render_header_section(parse_header_block(srv_path))
+
     # Read raw content
     with open(srv_path, 'r', encoding='utf-8') as f:
         raw_content = f.read()

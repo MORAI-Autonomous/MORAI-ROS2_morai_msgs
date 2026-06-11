@@ -2,13 +2,21 @@
 
 **Message Type**: `morai_msgs/msg/IntersectionStatus`
 
+Current state of an intersection.
+
+**Topic**: `/InsnStatus`
+
 ## Message Definition
 
 ```
+# IntersectionStatus
+# Current state of an intersection.
+# Topic: /InsnStatus
+
 std_msgs/Header header
-int32 intersection_index
-int16 intersection_status
-float32 intersection_status_time
+int32 intersection_index  # Intersection identifier
+int16 intersection_status  # Current intersection status
+float32 intersection_status_time  # Elapsed time in current status [s]
 ```
 
 ## Field Descriptions
@@ -16,9 +24,9 @@ float32 intersection_status_time
 | Field | Type | Description |
 |-------|------|-------------|
 | `header` | `std_msgs/Header` | - |
-| `intersection_index` | `int32` | - |
-| `intersection_status` | `int16` | - |
-| `intersection_status_time` | `float32` | - |
+| `intersection_index` | `int32` | Intersection identifier |
+| `intersection_status` | `int16` | Current intersection status |
+| `intersection_status_time` | `float32` | Elapsed time in current status [s] |
 
 ## Usage Example
 

@@ -2,30 +2,38 @@
 
 **Message Type**: `morai_msgs/msg/ReplayInfo`
 
+Replay data containing ego vehicle state and surrounding object information.
+
+**Topic**: `/ReplayInfo_topic`
+
 ## Message Definition
 
 ```
+# ReplayInfo
+# Replay data containing ego vehicle state and surrounding object information.
+# Topic: /ReplayInfo_topic
+
 std_msgs/Header header
 
-float64 ego_acc
-float64 ego_brake
-float64 ego_steer
+float64 ego_acc  # Accelerator pedal, range 0~1
+float64 ego_brake  # Brake pedal, range 0~1
+float64 ego_steer  # Front wheel angle [deg]
 
-geometry_msgs/Quaternion orientation
+geometry_msgs/Quaternion orientation  # Current orientation
 
-geometry_msgs/Vector3 linear_acceleration
+geometry_msgs/Vector3 linear_acceleration  # Current linear acceleration
 
-geometry_msgs/Vector3 angular_velocity
+geometry_msgs/Vector3 angular_velocity  # Current angular velocity
 
-int32 num_of_npcs
-int32 num_of_pedestrian
-int32 num_of_obstacle
+int32 num_of_npcs  # Number of NPC vehicles
+int32 num_of_pedestrian  # Number of pedestrians
+int32 num_of_obstacle  # Number of static obstacles
 
-ObjectStatus[] npc_list 
+ObjectStatus[] npc_list  # NPC vehicle information
 
-ObjectStatus[] pedestrian_list
+ObjectStatus[] pedestrian_list  # Pedestrian information
 
-ObjectStatus[] obstacle_list 
+ObjectStatus[] obstacle_list  # Obstacle information
 ```
 
 ## Field Descriptions
@@ -33,18 +41,18 @@ ObjectStatus[] obstacle_list
 | Field | Type | Description |
 |-------|------|-------------|
 | `header` | `std_msgs/Header` | - |
-| `ego_acc` | `float64` | - |
-| `ego_brake` | `float64` | - |
-| `ego_steer` | `float64` | - |
-| `orientation` | `geometry_msgs/Quaternion` | - |
-| `linear_acceleration` | `geometry_msgs/Vector3` | - |
-| `angular_velocity` | `geometry_msgs/Vector3` | - |
-| `num_of_npcs` | `int32` | - |
-| `num_of_pedestrian` | `int32` | - |
-| `num_of_obstacle` | `int32` | - |
-| `npc_list` | `ObjectStatus[]` | - |
-| `pedestrian_list` | `ObjectStatus[]` | - |
-| `obstacle_list` | `ObjectStatus[]` | - |
+| `ego_acc` | `float64` | Accelerator pedal, range 0~1 |
+| `ego_brake` | `float64` | Brake pedal, range 0~1 |
+| `ego_steer` | `float64` | Front wheel angle [deg] |
+| `orientation` | `geometry_msgs/Quaternion` | Current orientation |
+| `linear_acceleration` | `geometry_msgs/Vector3` | Current linear acceleration |
+| `angular_velocity` | `geometry_msgs/Vector3` | Current angular velocity |
+| `num_of_npcs` | `int32` | Number of NPC vehicles |
+| `num_of_pedestrian` | `int32` | Number of pedestrians |
+| `num_of_obstacle` | `int32` | Number of static obstacles |
+| `npc_list` | `ObjectStatus[]` | NPC vehicle information |
+| `pedestrian_list` | `ObjectStatus[]` | Pedestrian information |
+| `obstacle_list` | `ObjectStatus[]` | Obstacle information |
 
 ## Usage Example
 

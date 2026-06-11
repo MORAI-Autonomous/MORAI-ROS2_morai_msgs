@@ -1,3 +1,7 @@
-MoraiSimProcHandle request
+# MoraiSimProc
+# Send rosbag replay playback commands to the simulator.
+# Service: /Service_MoraiSimProc
+
+MoraiSimProcHandle request  # Playback command and conditions
 ---
-MoraiSrvResponse response
+MoraiSrvResponse response   # Success/failure result

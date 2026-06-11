@@ -1,3 +1,7 @@
-std_msgs/Empty empty
+# MapSpec
+# Query the map coordinate system specification.
+# Service: /Service_MoraiMapSpec
+
+std_msgs/Empty empty  # Empty request (no parameters)
 ---
-MapSpec response
+MapSpec response  # Map coordinate system specification

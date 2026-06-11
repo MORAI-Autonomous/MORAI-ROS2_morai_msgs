@@ -1,3 +1,7 @@
-EventInfo request
+# EventCmd
+# Apply a one-time vehicle event (control mode, gear, lamps, pause).
+# Service: /Service_MoraiEventCmd
+
+EventInfo request   # Event settings to apply
 ---
-EventInfo response
+EventInfo response  # Resulting event state after applying the request

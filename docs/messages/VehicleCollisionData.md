@@ -2,11 +2,19 @@
 
 **Message Type**: `morai_msgs/msg/VehicleCollisionData`
 
+Collisions between NPC vehicles (distinct from ego vehicle collisions).
+
+**Topic**: `/VehicleCollisionData`
+
 ## Message Definition
 
 ```
+# VehicleCollisionData
+# Collisions between NPC vehicles (distinct from ego vehicle collisions).
+# Topic: /VehicleCollisionData
+
 std_msgs/Header header
-VehicleCollision[] collisions
+VehicleCollision[] collisions  # List of NPC vehicle collision events
 ```
 
 ## Field Descriptions
@@ -14,7 +22,7 @@ VehicleCollision[] collisions
 | Field | Type | Description |
 |-------|------|-------------|
 | `header` | `std_msgs/Header` | - |
-| `collisions` | `VehicleCollision[]` | - |
+| `collisions` | `VehicleCollision[]` | List of NPC vehicle collision events |
 
 ## Usage Example
 

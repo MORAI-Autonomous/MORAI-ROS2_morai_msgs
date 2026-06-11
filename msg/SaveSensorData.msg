@@ -1,5 +1,9 @@
+# SaveSensorData
+# Configuration for saving sensor data to file.
+# Topic: /SaveSensorData
+
 std_msgs/Header header
 
-bool is_custom_file_name
-string custom_file_name
-string file_dir
+bool is_custom_file_name  # true: use custom filename, false: use default
+string custom_file_name  # Custom filename input by user
+string file_dir  # Full path of save directory

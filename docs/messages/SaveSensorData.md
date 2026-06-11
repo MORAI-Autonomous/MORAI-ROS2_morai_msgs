@@ -2,14 +2,22 @@
 
 **Message Type**: `morai_msgs/msg/SaveSensorData`
 
+Configuration for saving sensor data to file.
+
+**Topic**: `/SaveSensorData`
+
 ## Message Definition
 
 ```
+# SaveSensorData
+# Configuration for saving sensor data to file.
+# Topic: /SaveSensorData
+
 std_msgs/Header header
 
-bool is_custom_file_name
-string custom_file_name
-string file_dir
+bool is_custom_file_name  # true: use custom filename, false: use default
+string custom_file_name  # Custom filename input by user
+string file_dir  # Full path of save directory
 ```
 
 ## Field Descriptions
@@ -17,9 +25,9 @@ string file_dir
 | Field | Type | Description |
 |-------|------|-------------|
 | `header` | `std_msgs/Header` | - |
-| `is_custom_file_name` | `bool` | - |
-| `custom_file_name` | `string` | - |
-| `file_dir` | `string` | - |
+| `is_custom_file_name` | `bool` | true: use custom filename, false: use default |
+| `custom_file_name` | `string` | Custom filename input by user |
+| `file_dir` | `string` | Full path of save directory |
 
 ## Usage Example
 

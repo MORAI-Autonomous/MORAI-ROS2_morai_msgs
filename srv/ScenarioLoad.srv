@@ -1,3 +1,7 @@
-ScenarioLoad request
+# ScenarioLoad
+# Load a scenario file into the simulator.
+# Service: /Service_MoraiScenarioLoad
+
+ScenarioLoad request       # Scenario file and load options
 ---
-MoraiSrvResponse response
+MoraiSrvResponse response  # Success/failure result

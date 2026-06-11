@@ -2,12 +2,20 @@
 
 **Message Type**: `morai_msgs/msg/VehicleSpecIndex`
 
+Vehicle specification query request.
+
+**Service**: `/Service_MoraiVehicleSpec (request)`
+
 ## Message Definition
 
 ```
+# VehicleSpecIndex
+# Vehicle specification query request.
+# Service: /Service_MoraiVehicleSpec (request)
+
 std_msgs/Header header
 
-int32 unique_id
+int32 unique_id  # Unique ID of the requested vehicle
 ```
 
 ## Field Descriptions
@@ -15,7 +23,7 @@ int32 unique_id
 | Field | Type | Description |
 |-------|------|-------------|
 | `header` | `std_msgs/Header` | - |
-| `unique_id` | `int32` | - |
+| `unique_id` | `int32` | Unique ID of the requested vehicle |
 
 ## Usage Example
 
