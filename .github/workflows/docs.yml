@@ -7,16 +7,14 @@ on:
       - master
     tags:
       - 'v*'
+      - '*.R*'
   workflow_dispatch:
     inputs:
-      version:
-        description: 'Version label to publish (e.g. v1.2.0). Leave blank to publish as "dev".'
+      backfill:
+        description: 'Rebuild and publish every version (dev + release tags 24.R2, 26.R1) and set dev as default.'
+        type: boolean
         required: false
-        default: ''
-      alias:
-        description: 'Alias to attach (e.g. latest). Leave blank for none.'
-        required: false
-        default: ''
+        default: false
 
 permissions:
   contents: write
@@ -25,9 +23,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # Always build with the tooling on `main`; msg/srv for each version are overlaid
+      # per-ref by docs/build_version.sh, so historical tags use the current generator.
       - uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
+          fetch-tags: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -49,34 +51,23 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           # mike commits to the gh-pages branch; make sure it is available locally.
           git fetch origin gh-pages --depth=1 || true
-
-      - name: Generate documentation pages
-        run: python docs/generate_docs.py
-
-      - name: Determine version and alias
-        id: ver
-        run: |
-          if [ "${{ github.ref_type }}" = "tag" ]; then
-            # Tag push: publish under the tag name and mark it as the latest release.
-            echo "version=${{ github.ref_name }}" >> "$GITHUB_OUTPUT"
-            echo "alias=latest" >> "$GITHUB_OUTPUT"
-          elif [ -n "${{ github.event.inputs.version }}" ]; then
-            # Manual dispatch with an explicit version.
-            echo "version=${{ github.event.inputs.version }}" >> "$GITHUB_OUTPUT"
-            echo "alias=${{ github.event.inputs.alias }}" >> "$GITHUB_OUTPUT"
-          else
-            # Branch push (or dispatch without a version): publish the in-progress docs.
-            echo "version=dev" >> "$GITHUB_OUTPUT"
-            echo "alias=" >> "$GITHUB_OUTPUT"
-          fi
+          # Ensure release tags are present for overlay builds.
+          git fetch --tags --force || true
 
       - name: Deploy versioned docs
         run: |
-          VERSION="${{ steps.ver.outputs.version }}"
-          ALIAS="${{ steps.ver.outputs.alias }}"
-          if [ -n "$ALIAS" ]; then
-            mike deploy --push --update-aliases "$VERSION" "$ALIAS"
-            mike set-default --push "$ALIAS"
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.backfill }}" = "true" ]; then
+            # On-demand publish of all versions (used for the initial backfill).
+            docs/build_version.sh 24.R2 24.R2
+            docs/build_version.sh 26.R1 26.R1
+            docs/build_version.sh main dev
+            mike set-default --push dev
+          elif [ "${{ github.ref_type }}" = "tag" ]; then
+            # Release tag push: publish that release as its own version. dev stays default.
+            docs/build_version.sh "${{ github.ref_name }}" "${{ github.ref_name }}"
           else
-            mike deploy --push "$VERSION"
+            # Branch push to main (or manual dispatch without backfill): refresh dev.
+            docs/build_version.sh main dev
+            mike set-default --push dev
           fi

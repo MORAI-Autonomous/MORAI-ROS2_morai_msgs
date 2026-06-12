@@ -31,19 +31,25 @@ mkdocs serve
 ```
 
 Versions are published to the `gh-pages` branch automatically by
-[`.github/workflows/docs.yml`](.github/workflows/docs.yml):
+[`.github/workflows/docs.yml`](.github/workflows/docs.yml). Every version is built with the
+tooling on `main`, overlaying each ref's `msg`/`srv` definitions
+([`docs/build_version.sh`](docs/build_version.sh)), and the navigation/overview pages are
+auto-generated to match whatever definition set is present:
 
-- Pushes to `main`/`master` publish the in-progress docs as the **`dev`** version.
-- Pushing a `v*` tag publishes that version and moves the **`latest`** alias (the default
-  shown to visitors) to it.
-- You can also publish a specific version manually via the **Run workflow** button
-  (`workflow_dispatch`).
+- Pushes to `main`/`master` publish the in-progress docs as the **`dev`** version, which is
+  the default shown to visitors at the site root.
+- Pushing a release tag (`v*`, or `NN.RN` such as `26.R1`) publishes that release as its
+  own selectable version. `dev` remains the default.
+- Run the workflow manually with **Run workflow → backfill** checked to (re)build and
+  publish every version at once (`dev` plus the release tags `24.R2` and `26.R1`).
 
-To publish a version locally instead of via CI:
+To publish a version locally instead of via CI (overlays the ref's definitions, builds with
+the current tooling, and pushes to `gh-pages`):
 
 ```bash
-mike deploy --push --update-aliases v1.2.0 latest
-mike set-default --push latest
+docs/build_version.sh main dev     # publish the dev version
+docs/build_version.sh 26.R1 26.R1  # publish a release version
+mike set-default --push dev         # point the site root at dev
 ```
 
 ## License
